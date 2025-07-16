@@ -1,0 +1,56 @@
+<mat-toolbar color="primary" class="navbar">
+
+  <a mat-button routerLink="/" class="app-logo">
+    <img src="assets/logo.png" alt="Synapse Logo" class="logo-img" />
+    <span class="app-name">Synapse</span>
+  </a>
+
+  <!-- Navigation Links -->
+  <nav class="nav-links">
+    <button mat-button [matMenuTriggerFor]="decksMenu">Decks</button>
+    <button mat-button [matMenuTriggerFor]="cardsMenu">Cards</button>
+    <button mat-button [matMenuTriggerFor]="randomMenu">Random</button>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <!-- Right Section: Search, Theme Toggle, Auth/Profile -->
+  <div class="nav-actions">
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Search cards or decks" />
+      <button mat-icon-button matSuffix>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <app-theme-toggle></app-theme-toggle>
+
+    <ng-container *ngIf="!isLoggedIn; else profileButton">
+      <button mat-button routerLink="/login">Login</button>
+      <button mat-stroked-button routerLink="/signup">Sign Up</button>
+    </ng-container>
+
+    <ng-template #profileButton>
+      <button mat-button routerLink="/profile">
+        <mat-icon>account_circle</mat-icon> Profile
+      </button>
+    </ng-template>
+  </div>
+</mat-toolbar>
+
+<!-- Menus -->
+<mat-menu #decksMenu="matMenu">
+  <button mat-menu-item routerLink="/decks">All Decks</button>
+  <button mat-menu-item routerLink="/decks/archetypes">Archetypes</button>
+</mat-menu>
+
+<mat-menu #cardsMenu="matMenu">
+  <button mat-menu-item routerLink="/cards">All Cards</button>
+  <button mat-menu-item routerLink="/cards/random">Random Card</button>
+</mat-menu>
+
+<mat-menu #randomMenu="matMenu">
+  <button mat-menu-item routerLink="/decks/random">Random Deck</button>
+  <button mat-menu-item routerLink="/cards/random">Random Card</button>
+</mat-menu>

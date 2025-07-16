@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 12px;
+}
+
+.app-name {
+  margin-right: 12px;
+}
+
+.nav-links  {
+  display: flex;
+  gap: 9px;
+
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.search-bar {
+  height: 80%;
+  width: 260px;
+}

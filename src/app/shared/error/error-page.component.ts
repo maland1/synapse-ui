@@ -16,6 +16,9 @@ import { RouterModule } from '@angular/router';
   `,
 })
 export class ErrorPageComponent {
-  @Input() title: string = 'An Error Occurred';
-  @Input() message: string = 'Something went wrong. Please try again later.';
+  @Input()
+  title: string = 'An Error Occurred';
+  
+  @Input()
+  message: string = 'Something went wrong. Please try again later.';
 }

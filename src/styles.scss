@@ -1,4 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root, :root.light {
+  /* Core Brand Colors */
+  --synapse-core-theme: #5e0575;
+  --synapse-core-cta: #b39500;
+
+  /* Backgrounds & Surface */
+  --synapse-core-background: #f9f9f9;
+  --synapse-surface: #ffffff;
+  --synapse-surface-contrast: #2e2e2e;
+
+  /* Text Colors */
+  --synapse-text-primary: #2e2e2e;
+  --synapse-text-secondary: #555555;
+
+  /* Accent / Highlights */
+  --synapse-accent: #5e0575;
+  --synapse-cta-hover: #d4ae00;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --synapse-core-theme: #a21dcb;
+    --synapse-core-cta: #ffce00;
+
+    --synapse-core-background: #2e2e2e;
+    --synapse-surface: #3a3a3a;
+    --synapse-surface-contrast: #ffffff;
+
+    --synapse-text-primary: #f1f1f1;
+    --synapse-text-secondary: #cccccc;
+
+    --synapse-accent: #e67cff;
+    --synapse-cta-hover: #ffd700;
+  }
+}
+
+:root.dark {
+  --synapse-core-theme: #a21dcb;
+  --synapse-core-cta: #ffce00;
+
+  --synapse-core-background: #2e2e2e;
+  --synapse-surface: #3a3a3a;
+  --synapse-surface-contrast: #ffffff;
+
+  --synapse-text-primary: #f1f1f1;
+  --synapse-text-secondary: #cccccc;
+
+  --synapse-accent: #e67cff;
+  --synapse-cta-hover: #ffd700;
+}
+
+html, body {
+  height: 100%;
+  color: var(--synapse-text-primary);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.synapseBackground {
+  background-color: var(--synapse-core-background);
+}
+
+.synapseAppContainer {
+  background-color: var(--synapse-core-background);
+}
+
