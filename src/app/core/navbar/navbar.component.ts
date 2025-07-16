@@ -31,18 +31,8 @@ export class NavbarComponent implements OnInit {
 
   isExpanded: boolean = false;
   isLoggedIn: boolean = false;
-  isDarkMode: boolean = false;
 
   ngOnInit(): void {
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)',
-    ).matches;
-    this.isDarkMode = prefersDark;
-    const theme = this.isDarkMode ? 'dark' : 'light';
   }
 
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    return null;
-  }
 }
