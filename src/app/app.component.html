@@ -1,0 +1,31 @@
+<div id="synapse-app" class="app-container synapse-main">
+  <div class="synapse-toolbar">
+
+    <ng-template #mainContent>
+      <div class="mainContent">
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+
+        <div class="synapse-footer">
+          <div class="synapse-logo">
+            <a href="/" aria-label="Synapse Homepage">
+              <img src="SYNAPSE LOGO" aria-hidden="true">
+            </a>
+          </div>
+          <div class="synapse-terms">
+            <span>
+              Test
+            </span>
+          </div>
+          <nav class="synapse-socials">
+            LIST HERE
+          </nav>
+        </div>
+
+      </div>
+    </ng-template>
+    <app-test [mainContent]="mainContent"></app-test>
+    <!-- <side-navbar [mainContent]="mainContent"></side-navbar> -->
+  </div>
+</div>
