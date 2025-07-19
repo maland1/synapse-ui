@@ -26,25 +26,29 @@
 
     <app-theme-toggle></app-theme-toggle>
 
-    @if (!auth.isLoggedIn()) {
+    <div class="auth-buttons">
+      @if (!auth.isLoggedIn()) {
       <button mat-button routerLink="/login">Login</button>
       <button mat-stroked-button routerLink="/signup">Sign Up</button>
-    } @else {
-      <button mat-button [matMenuTriggerFor]="userMenu">
-        <mat-icon>account_circle</mat-icon> Profile
-      </button>
-      <mat-menu #userMenu="matMenu">
-        <button mat-menu-item routerLink="/profile">
-          <mat-icon>person</mat-icon> My Profile
+      }
+      @else {
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <mat-icon>account_circle</mat-icon> Profile
         </button>
-        <button mat-menu-item routerLink="/decks">
-          <mat-icon>folder</mat-icon> My Decks
-        </button>
-        <button mat-menu-item (click)="auth.logout()">
-          <mat-icon>logout</mat-icon> Logout
-        </button>
-      </mat-menu>
-    }
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item routerLink="/profile">
+            <mat-icon>person</mat-icon> My Profile
+          </button>
+          <button mat-menu-item routerLink="/decks">
+            <mat-icon>folder</mat-icon> My Decks
+          </button>
+          <button mat-menu-item routerLink="/login">
+            <mat-icon>logout</mat-icon> Logout
+          </button>
+        </mat-menu>
+      }
+    </div>
+    
 
   </div>
 </mat-toolbar>

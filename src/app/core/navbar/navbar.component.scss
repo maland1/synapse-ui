@@ -25,17 +25,29 @@
 
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .spacer {
   flex: 1 1 auto;
 }
 
-.search-bar {
-  height: 80%;
-  width: 260px;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .search-bar {
+    min-width: 200px;
+  }
+
+  app-theme-toggle {
+    margin: 0 8px;
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 180px; // ✅ Adjust based on widest auth button combo
+    justify-content: flex-end;
+    transition: all 0.3s ease;
+  }
 }
