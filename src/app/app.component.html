@@ -1,30 +1,28 @@
 <div id="synapse-app" class="app-container synapse-main">
   <!-- Static Toolbar -->
-  <navbar [mainContent]="mainContent"></navbar>
+  <navbar></navbar>
 
   <!-- Projected Main Content Template -->
-  <ng-template #mainContent>
-    <div class="mainContent">
-      <div>
-        <router-outlet></router-outlet>
+  <div class="mainContent">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="synapse-footer">
+      <div class="synapse-logo">
+        <a routerLink="/" aria-label="Synapse Homepage">
+          <img src="SYNAPSE LOGO" alt="Synapse Logo" aria-hidden="true" />
+        </a>
       </div>
 
-      <!-- Footer Section -->
-      <footer class="synapse-footer">
-        <div class="synapse-logo">
-          <a routerLink="/" aria-label="Synapse Homepage">
-            <img src="SYNAPSE LOGO" alt="Synapse Logo" aria-hidden="true" />
-          </a>
-        </div>
+      <div class="synapse-terms">
+        <span>&copy; 2025 - Synapse</span>
+      </div>
 
-        <div class="synapse-terms">
-          <span>Test</span>
-        </div>
-
-        <nav class="synapse-socials">
-          LIST HERE
-        </nav>
-      </footer>
-    </div>
-  </ng-template>
+      <nav class="synapse-socials">
+        LIST HERE
+      </nav>
+    </footer>
+  </div>
 </div>
