@@ -8,6 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ThemeToggleComponent } from 'src/app/shared/components/theme-toggle/theme-toggle.component';
+import type { AuthService } from '../users/auth/auth.service';
 
 @Component({
   selector: 'navbar',
@@ -20,7 +21,7 @@ import { ThemeToggleComponent } from 'src/app/shared/components/theme-toggle/the
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    ThemeToggleComponent
+    ThemeToggleComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
@@ -30,9 +31,8 @@ export class NavbarComponent implements OnInit {
   mainContent!: TemplateRef<unknown>;
 
   isExpanded: boolean = false;
-  isLoggedIn: boolean = false;
 
-  ngOnInit(): void {
-  }
+  constructor(public auth: AuthService) {}
 
+  ngOnInit(): void {}
 }

@@ -1,9 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  isLoggedIn = signal(false);
 
-  constructor() { }
+  login() {
+    this.isLoggedIn.set(true);
+  }
+
+  logout() {
+    this.isLoggedIn.set(false);
+  }
 }
