@@ -26,16 +26,13 @@
 
     <app-theme-toggle></app-theme-toggle>
 
-    <ng-container *ngIf="!auth.isLoggedIn(); else profileMenu">
+    @if (!auth.isLoggedIn()) {
       <button mat-button routerLink="/login">Login</button>
       <button mat-stroked-button routerLink="/signup">Sign Up</button>
-    </ng-container>
-
-    <ng-template #profileMenu>
+    } @else {
       <button mat-button [matMenuTriggerFor]="userMenu">
         <mat-icon>account_circle</mat-icon> Profile
       </button>
-
       <mat-menu #userMenu="matMenu">
         <button mat-menu-item routerLink="/profile">
           <mat-icon>person</mat-icon> My Profile
@@ -47,7 +44,8 @@
           <mat-icon>logout</mat-icon> Logout
         </button>
       </mat-menu>
-    </ng-template>
+    }
+
   </div>
 </mat-toolbar>
 

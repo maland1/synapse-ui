@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input, type OnInit, type TemplateRef } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,14 +15,13 @@ import type { AuthService } from '../users/auth/auth.service';
   imports: [
     MatToolbarModule,
     MatIconModule,
-    CommonModule,
     MatListModule,
     RouterModule,
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    ThemeToggleComponent,
-  ],
+    ThemeToggleComponent
+],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })

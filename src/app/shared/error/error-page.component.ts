@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-error-page',
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   template: `
     <div class="flex flex-col items-center justify-center h-screen text-center px-4">
       <h1 class="text-5xl font-bold text-red-600 mb-4">{{ title }}</h1>
