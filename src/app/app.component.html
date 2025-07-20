@@ -1,28 +1,30 @@
-<div id="synapse-app" class="app-container synapse-main">
-  <!-- Static Toolbar -->
-  <navbar></navbar>
+<body id="synapse-app" class="app-container synapse-main">
+  
+  <!-- Site Header -->
+  <header class="site-header synapse-header">
+    <navbar></navbar>
+  </header>
 
-  <!-- Projected Main Content Template -->
-  <div class="mainContent">
-    <div>
-      <router-outlet></router-outlet>
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer synapse-footer">
+    <nav class="synapse-logo">
+      <a routerLink="/" aria-label="Synapse Homepage">
+        <img src="SYNAPSE LOGO" alt="Synapse Logo" aria-hidden="true" />
+      </a>
+    </nav>
+
+    <div class="synapse-terms">
+      <span>&copy; 2025 - Synapse</span>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="synapse-footer">
-      <div class="synapse-logo">
-        <a routerLink="/" aria-label="Synapse Homepage">
-          <img src="SYNAPSE LOGO" alt="Synapse Logo" aria-hidden="true" />
-        </a>
-      </div>
+    <nav class="synapse-socials">
+      LIST HERE
+    </nav>
+  </footer>
 
-      <div class="synapse-terms">
-        <span>&copy; 2025 - Synapse</span>
-      </div>
-
-      <nav class="synapse-socials">
-        LIST HERE
-      </nav>
-    </footer>
-  </div>
-</div>
+</body>
