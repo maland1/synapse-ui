@@ -1,16 +1,23 @@
 import { Injectable, signal } from '@angular/core';
+import type { IUserData } from './models/IUserData.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   isLoggedIn = signal(false);
+  userInfo!: IUserData[];
 
-  login() {
+  async login() {
     this.isLoggedIn.set(true);
+    this.userInfo = this.userInfo;
   }
 
-  logout() {
+  async logout() {
     this.isLoggedIn.set(false);
+  }
+
+  async getUser() {
+    return this.userInfo;
   }
 }
