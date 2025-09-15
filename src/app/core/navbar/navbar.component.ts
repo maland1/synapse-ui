@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ThemeToggleComponent } from 'src/app/shared/components/theme-toggle/theme-toggle.component';
 // biome-ignore lint/style/useImportType: <Needs to be added as runtime import>
-import { AuthService } from '../users/auth/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'navbar',

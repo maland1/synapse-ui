@@ -5,29 +5,29 @@ export const routes: Routes = [
     path: '',
     pathMatch: 'full',
     loadComponent: () =>
-      import('./core/pages/home/home.component').then((m) => m.HomeComponent),
+      import('@features/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'login',
     loadComponent: () =>
-      import('./core/users/auth/login/login.component').then((m) => m.LoginComponent),
+      import('@features/auth/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'logout',
     loadComponent: () =>
-      import('./core/users/auth/logout/logout.component').then((m) => m.LogoutComponent),
+      import('@features/auth/logout/logout.component').then((m) => m.LogoutComponent),
   },
   {
     path: 'register',
     loadComponent: () =>
-      import('./core/users/auth/register/register.component').then(
+      import('@features/auth/register/register.component').then(
         (m) => m.RegisterComponent,
       ),
   },
   {
     path: 'profile',
     loadComponent: () =>
-      import('./core/users/profile/profile.component').then(
+      import('@features/auth/profile/profile.component').then(
         (m) => m.ProfileComponent,
       ),
     // canActivate: [AuthGuard],
@@ -39,7 +39,7 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./core/features/cards/cards-page/cards-page.component').then(
+          import('@features/cards/cards-page/cards-page.component').then(
             (m) => m.CardsPageComponent,
           ),
       },
@@ -47,14 +47,14 @@ export const routes: Routes = [
         path: ':id',
         loadComponent: () =>
           import(
-            './core/features/cards/card-details/card-details.component'
+            '@features/cards/card-details/card-details.component'
           ).then((m) => m.CardDetailsComponent),
       },
       {
         path: 'random',
         loadComponent: () =>
           import(
-            './core/features/cards/card-random/card-random.component'
+            '@features/cards/card-random/card-random.component'
           ).then((m) => m.CardRandomComponent),
       },
     ],
@@ -65,7 +65,7 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./core/features/decks/decks-page/decks-page.component').then(
+          import('@features/decks/decks-page/decks-page.component').then(
             (m) => m.DecksPageComponent,
           ),
       },
@@ -73,28 +73,28 @@ export const routes: Routes = [
         path: 'archetypes',
         loadComponent: () =>
           import(
-            './core/features/decks/deck-archetypes-page/deck-archetypes-page.component'
+            '@features/decks/deck-archetypes-page/deck-archetypes-page.component'
           ).then((m) => m.DeckArchetypesPageComponent),
       },
       {
         path: 'archetypes/:id',
         loadComponent: () =>
           import(
-            './core/features/decks/deck-archetypes-detail/deck-archetypes-detail.component'
+            '@features/decks/deck-archetypes-detail/deck-archetypes-detail.component'
           ).then((m) => m.DeckArchetypesDetailComponent),
       },
       {
         path: ':id',
         loadComponent: () =>
           import(
-            './core/features/decks/deck-detail/deck-detail.component'
+            '@features/decks/deck-detail/deck-detail.component'
           ).then((m) => m.DeckDetailComponent),
       },
       {
         path: 'random',
         loadComponent: () =>
           import(
-            './core/features/decks/deck-random/deck-random.component'
+            '@features/decks/deck-random/deck-random.component'
           ).then((m) => m.DeckRandomComponent),
       },
     ],
@@ -103,7 +103,7 @@ export const routes: Routes = [
   {
     path: 'error',
     loadComponent: () =>
-      import('./shared/error/error-page.component').then(
+      import('@shared/error/error-page.component').then(
         (m) => m.ErrorPageComponent,
       ),
   },
