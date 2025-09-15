@@ -1,7 +1,6 @@
-/** biome-ignore-all lint/style/useImportType: <Needs to be added as runtime import> */
 import { Component, type OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '@core/services/auth.service';
 
 @Component({
   selector: 'app-login',
