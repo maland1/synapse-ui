@@ -1,7 +1,5 @@
 import { Component, type OnInit } from '@angular/core';
-// biome-ignore lint/style/useImportType: <Required as runtime import>
-import { AuthService } from '../auth/auth.service';
-import type { IUserData } from '../auth/models/IUserData.model';
+import { AuthService } from '@core/services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +8,7 @@ import type { IUserData } from '../auth/models/IUserData.model';
   styleUrl: './profile.component.scss',
 })
 export class ProfileComponent implements OnInit {
-  user!: IUserData[];
+  user!: string[];
 
   constructor(private readonly auth: AuthService) {}
 

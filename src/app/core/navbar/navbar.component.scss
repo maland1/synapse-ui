@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    min-width: 180px; // ✅ Adjust based on widest auth button combo
+    min-width: 180px; // Adjusts based on widest auth button combo
     justify-content: flex-end;
     transition: all 0.3s ease;
   }

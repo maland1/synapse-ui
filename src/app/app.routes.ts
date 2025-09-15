@@ -10,24 +10,24 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () =>
-      import('@features/auth/login/login.component').then((m) => m.LoginComponent),
+      import('@auth/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'logout',
     loadComponent: () =>
-      import('@features/auth/logout/logout.component').then((m) => m.LogoutComponent),
+      import('@auth/logout/logout.component').then((m) => m.LogoutComponent),
   },
   {
     path: 'register',
     loadComponent: () =>
-      import('@features/auth/register/register.component').then(
+      import('@auth/register/register.component').then(
         (m) => m.RegisterComponent,
       ),
   },
   {
     path: 'profile',
     loadComponent: () =>
-      import('@features/auth/profile/profile.component').then(
+      import('@auth/profile/profile.component').then(
         (m) => m.ProfileComponent,
       ),
     // canActivate: [AuthGuard],
