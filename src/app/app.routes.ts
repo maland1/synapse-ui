@@ -39,22 +39,22 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('@features/cards/cards-page/cards-page.component').then(
-            (m) => m.CardsPageComponent,
+          import('@features/cards/pages/card-list/card-list.component').then(
+            (m) => m.CardListComponent,
           ),
       },
       {
-        path: ':id',
+        path: ':cardId',
         loadComponent: () =>
           import(
-            '@features/cards/card-details/card-details.component'
+            '@features/cards/pages/card-details/card-details.component'
           ).then((m) => m.CardDetailsComponent),
       },
       {
         path: 'random',
         loadComponent: () =>
           import(
-            '@features/cards/card-random/card-random.component'
+            '@features/cards/components/card-random/card-random.component'
           ).then((m) => m.CardRandomComponent),
       },
     ],
@@ -65,36 +65,37 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('@features/decks/decks-page/decks-page.component').then(
-            (m) => m.DecksPageComponent,
+          import('@features/decks/pages/deck-list/deck-list.component').then(
+            (m) => m.DeckListComponent,
           ),
       },
       {
         path: 'archetypes',
         loadComponent: () =>
           import(
-            '@features/decks/deck-archetypes-page/deck-archetypes-page.component'
-          ).then((m) => m.DeckArchetypesPageComponent),
+            '@features/decks/pages/archetype-list/archetype-list.component').then(
+              (m) => m.ArchetypeListComponent
+            ),
       },
       {
-        path: 'archetypes/:id',
+        path: 'archetypes/:deckId',
         loadComponent: () =>
           import(
-            '@features/decks/deck-archetypes-detail/deck-archetypes-detail.component'
-          ).then((m) => m.DeckArchetypesDetailComponent),
+            '@features/decks/pages/archetype-deck-list/archetype-deck-list.component'
+          ).then((m) => m.ArchetypeDeckListComponent),
       },
       {
-        path: ':id',
+        path: ':deckId',
         loadComponent: () =>
           import(
-            '@features/decks/deck-detail/deck-detail.component'
+            '@features/decks/pages/deck-detail/deck-detail.component'
           ).then((m) => m.DeckDetailComponent),
       },
       {
         path: 'random',
         loadComponent: () =>
           import(
-            '@features/decks/deck-random/deck-random.component'
+            '@features/decks/components/deck-random/deck-random.component'
           ).then((m) => m.DeckRandomComponent),
       },
     ],

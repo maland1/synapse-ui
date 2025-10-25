@@ -2,7 +2,7 @@ import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './core/navbar/navbar.component';
+import { NavbarComponent } from '@core/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',

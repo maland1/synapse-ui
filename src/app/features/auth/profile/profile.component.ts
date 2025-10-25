@@ -1,5 +1,5 @@
-import { Component, type OnInit } from '@angular/core';
-import { AuthService } from '@core/services/auth.service';
+import { Component, computed, inject } from '@angular/core';
+import { AuthService } from '@core/services/auth/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,12 +7,8 @@ import { AuthService } from '@core/services/auth.service';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
-export class ProfileComponent implements OnInit {
-  user!: string[];
+export class ProfileComponent {
+  auth = inject(AuthService);
 
-  constructor(private readonly auth: AuthService) {}
-
-  async ngOnInit() {
-    this.user = await this.auth.getUser();
-  }
+  userInfo = computed(() => this.auth.getUser());
 }

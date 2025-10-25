@@ -1,0 +1,9 @@
+<!-- some styling shit etc blah blah -->
+
+@if (card.status() === 'loading') {
+  <p>Loading...</p>
+} @else if (card.error()) {
+  <p>Error loading card.</p>
+} @else {
+  <app-card-info [card]="card.value()!"></app-card-info>
+}

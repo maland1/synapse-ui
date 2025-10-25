@@ -1,6 +1,9 @@
 import { Component, type OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { getUserPreferences, updateUserPreference } from '../../utils/user-preferences.utils';
+import {
+  getUserPreferences,
+  updateUserPreference,
+} from '@shared/utils/user-preferences.util';
 
 @Component({
   selector: 'app-theme-toggle',

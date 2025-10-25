@@ -1,0 +1,7 @@
+<div class="card-container">
+  @for (card of cards; track card.id) {
+    <app-card-preview [card]="card"></app-card-preview>
+  } @empty {
+    <p>No cards available.</p>
+  }
+</div>

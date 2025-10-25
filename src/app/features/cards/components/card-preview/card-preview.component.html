@@ -1,0 +1,10 @@
+<a [routerLink]="['/cards', card().id]" class="card-preview">
+  <div class="card-image-wrapper">
+    <img loading="lazy" [src]="card().imageUrl" [alt]="card().name" class="card-image">
+    <div class="image-skeleton"></div>
+  </div>
+  <div class="card-content">
+    <h3 class="card-name">{{ card().name }}</h3>
+    <p class="card-description">{{ card().description }}</p>
+  </div>
+</a>
