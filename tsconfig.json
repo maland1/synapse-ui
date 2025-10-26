@@ -20,7 +20,12 @@
     "target": "es2024",
     "module": "ES2022",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "./node_modules/@types",
+      "./node_modules"
+    ],
+    "types": [
+      "vitest/globals"
     ],
     "lib": [
       "ES2024",
@@ -28,14 +33,28 @@
     ],
     "resolveJsonModule": true,
     "paths": {
-      "@auth/*": ["./src/app/features/auth/*"],
-      "@core/*": ["./src/app/core/*"],
-      "@features/*": ["./src/app/features/*"],
-      "@shared/*": ["./src/app/shared/*"],
-      "@utils/*": ["./src/app/shared/utils/*"],
+      "@auth/*": [
+        "./src/app/features/auth/*"
+      ],
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@features/*": [
+        "./src/app/features/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
+      ],
+      "@utils/*": [
+        "./src/app/shared/utils/*"
+      ],
       // angular paths
-      "@directives/*": ["./src/app/shared/directives/*"],
-      "@pipes/*": ["./src/app/shared/pipes/*"],
+      "@directives/*": [
+        "./src/app/shared/directives/*"
+      ],
+      "@pipes/*": [
+        "./src/app/shared/pipes/*"
+      ],
     },
   },
   "angularCompilerOptions": {

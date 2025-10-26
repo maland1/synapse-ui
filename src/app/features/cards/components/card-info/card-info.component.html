@@ -1,1 +1,68 @@
-<p>card-info works!</p>
+@if (card().status() === 'loading') {
+  <div class="card-wrapper skeleton">
+    <div class="card-header skeleton-line"></div>
+    <div class="card-image-wrapper">
+      <div class="image-skeleton"></div>
+    </div>
+    <div class="card-info">
+      <div class="skeleton-line short"></div>
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line long"></div>
+    </div>
+  </div>
+} @else if (card().error()) {
+  <p>Failed to load card.</p>
+} @else {
+  <div class="card-wrapper">
+    <h3 class="card-header">{{ cardData().name }}</h3>
+    <div class="card-image-wrapper">
+      <img [src]="cardData().imageUrl" [alt]="cardData().name" class="card-image">
+    </div>
+    <div class="card-info-panel">
+      @if(monsterCard(); as m) {
+        <p class="card-archetype">Archetype: {{ m.archetype }}</p>
+        <p class="card-attack">Attack: {{ m.attack }}</p>
+        <p class="card-defense">Defense: {{ m.defense }}</p>
+        <p class="card-description">Description: {{ m.description }}</p>
+        <p class="card-level">Level: {{ m.level }}</p>
+        <p class="card-rank">Rank: {{ m.rank }}</p>
+        <p class="card-attribute">Attribute: {{ m.attribute }}</p>
+        <p class="card-race">Race: {{ m.race }}</p>
+        <p class="card-monster-types">Types: {{ m.monsterTypes }}</p>
+        @if (m.effectText) {
+        <p class="card-effect-text">Effect: {{ m.effectText }}</p>
+        }
+        @if(m.linkRating) {
+          <p class="card-link">Link Rating: {{ m.linkRating }}</p>
+        }
+        @if (m.linkArrows?.length) {
+          <p class="card-link-arrows">Link Arrows: {{ m.linkArrows?.join(', ') }}</p>
+        }
+         @if (m.sets?.length) {
+          <p>Sets: {{ m.sets?.join(', ') }}</p>
+        }
+      }
+
+      @if(spellCard(); as s) {
+        <p class="card-archetype">Archetype: {{ s.archetype }}</p>
+        <p class="card-description">Description: {{ s.description }}</p>
+        @if (s.effectText) {
+        <p class="card-effect-text">Effect: {{ s.effectText }}</p>
+        }
+        @if (s.sets?.length) {
+          <p>Sets: {{ s.sets?.join(', ') }}</p>
+        }
+      }
+      
+     @if(trapCard(); as t) {
+        <p class="card-archetype">Archetype: {{ t.archetype }}</p>
+        <p class="card-description">Description: {{ t.description }}</p>
+        <p class="card-type">Type: {{ t.trapType }}</p>
+        @if (t.sets?.length) {
+          <p>Sets: {{ t.sets?.join(', ') }}</p>
+        }
+      }
+    </div>
+  </div>
+}
+
